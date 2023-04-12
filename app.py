@@ -5,8 +5,8 @@ import conexion_mongo as dbase
 import sys
 import dbiot as con
 import monitoreo
-import analisis as a
-import consultarclima
+#import analisis as a
+#import consultarclima
 
 
 today = date.today()
@@ -17,9 +17,9 @@ db = dbase.dbConexion()
 
 app = Flask(__name__)
 monitoreo.create_dash(app)
-
+a=("n")
 nombreUser = ()
-a = (a.filtroPol())
+#a = (a.filtroPol())
 error = ("")
 
 # Creamos nuestro primer route. '/login'
