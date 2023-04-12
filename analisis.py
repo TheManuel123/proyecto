@@ -22,10 +22,10 @@ def filtroPol():
     fechActual = time.strftime("%Y-%m-%d",estruc)
     ruCar = os.path.join(os.getcwd(), fechActual)
     #En caso de exitir se creara una con la fecha del dia que se ejecute
-    pcar = 'proyecto/AnalizisVideo/2023-04-12'
+    pcar = 'proyecto/Data/2023-04-12'
     if not os.path.exists(ruCar):
         os.makedirs(ruCar)
-    ruta_carpeta_capturas = '/home/manuel/Documentos/AnalizisVideo/2023-04-12/pghongo'
+    ruta_carpeta_capturas = 'proyecto/Data//2023-04-12/pghongo'
     if not os.path.exists(ruta_carpeta_capturas):
         os.makedirs(ruta_carpeta_capturas)
 
@@ -84,7 +84,7 @@ def filtroPol():
 
 def temperatura():
 
-    cap = cv2.VideoCapture('/home/manuel/Documentos/Data/')
+    cap = cv2.VideoCapture('proyecto/Data/')
 
     # Limites  y rango del color rojo Prueba 2
     LimiteinferiorRojo1 = np.array([0, 100, 20], np.uint8)
