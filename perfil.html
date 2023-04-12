@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfil</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            align-content: center;
+        }
+
+        .encabezado {
+            height: 40px;
+            font-size: 30px;
+            width: 70%;
+            background: #13322B;
+            color: white;
+            margin-top: 5px;
+        }
+
+        .encabezado2 {
+            height: 40px;
+            font-size: 30px;
+            width: 70%;
+            background: #13322B;
+            color: white;
+            margin-top: 30px;
+        }.encabezado3 {
+            height: 40px;
+            font-size: 30px;
+            width: 70%;
+            background: #13322B;
+            color: white;
+            margin-top: 34%;
+        }ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+            border: solid 1px;
+        }
+
+        .nose {
+            float: right;
+        }
+
+        .n {
+            float: right;
+            color: black;
+        }
+
+        .txt1 {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+        }
+
+        .txt {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+        }
+        .txt2 {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+            margin-top: 3%;
+        }.txt3 {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            margin-top: 11%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+        }.txt4 {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+            margin-top: 19%;
+        }.txt5 {
+            position: absolute;
+            font-size: 20px;
+            width: 70%;
+            height: auto;
+            background: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 7px;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+<div class="container">
+
+    <body>
+        <ul>
+            <li><a href="{{ url_for('perfil') }}">Inicio</a></li>
+            <li><a href="{{ url_for('info') }}">Informacion extra</a></li>
+            <li><a href="/m">Monitoreo de datos</a></li>
+            <li class="nose"><a href="{{ url_for('template') }}">Exit</a></li>
+        </ul>
+        <div class="encabezado">
+            <a>Tipo de plaga </a>
+        </div><br>
+        <div>
+            <a class="txt1">{{ f }}</a>
+
+        </div><br>
+        <div class="encabezado2">
+            <a>Recomendaciones</a>
+        </div><br>
+        <div>
+            <a class="txt">{{ l }}</a>
+        </div>
+        <div class="txt2">
+            <a>{{ g }}</a>
+        </div>
+        <div class="txt3">
+            <a>{{ h }}</a>
+        </div>
+        <div class="txt4">
+            <a>{{ i }}</a>
+        </div>
+        <div class="txt5">
+            <a>{{ j }}</a>
+        </div>
+        <div class="encabezado3">
+            <a>Area de afección</a>
+        </div>
+        <div>
+            <a class="txt">El area el la cual se detecto este brote fue</a><br>
+        </div><br>
+        <div>
+            <img src="2023-04-10/frame75.jpg" height="400px"
+                alt="Nose que poner">
+        </div>
+    </body>
+</div>
+</html>

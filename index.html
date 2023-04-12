@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .backgraund {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .center {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.555);
+            border: 2px solid #d8d8da;
+            border-radius: 8px;
+            margin: 0 auto;
+            margin-left: 30%;
+            padding: 40px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        .botton {
+            text-decoration: none;
+            font-weight: 5;
+            color: whitesmoke;
+            font-size: 15px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-color: rgb(24, 90, 188);
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 8px;
+            background: rgb(24, 90, 188);
+            margin-top: 10%;
+            float: right;
+        }
+
+        .img {
+            position: absolute;
+            height: 1px;
+        }
+
+        .txt {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+            float: left;
+        }
+
+        .txt1 {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+            float: left;
+            color: rgb(253, 52, 52);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <form action="perfil" method="get">
+            <label for="nombreUser"> Nombre de usuario </label>
+            <input type="text" id="nombreUser" name="nombreUser"><br />
+            <br>
+            <br>
+            <br>
+            <label for="contrasenia"> Contraseña </label>
+            <input type="password" id="contrasenia" name="contrasenia"><br />
+            <input class="botton" type="submit" value="Iniciar Sesión" />
+        </form>
+        <br>
+        <div class="txt">
+            Aun no tienes una cuenta <a href="{{ url_for('register') }}"> click aqui </a><br>
+            <b class="txt1">{{ n }}</b>
+        </div>
+    </div>
+</body>
+
+
+</html>
