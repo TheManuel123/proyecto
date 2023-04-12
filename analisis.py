@@ -6,7 +6,7 @@ import time
 
 def filtroPol():
     ##Aqui se espesifica la ruta del video a nalizar
-    cap = cv2.VideoCapture('/home/carlosgab/PycharmProjects/ProyectoFinal/Data/pruebaHongo.mp4')
+    cap = cv2.VideoCapture('./Data/pruebaHongo.mp4')
 
     ##Simple aqui solo se vefifica que el video es abto para reproduccirse
     if not cap.isOpened():
@@ -22,7 +22,7 @@ def filtroPol():
     fechActual = time.strftime("%Y-%m-%d",estruc)
     ruCar = os.path.join(os.getcwd(), fechActual)
     #En caso de exitir se creara una con la fecha del dia que se ejecute
-    pcar = '/home/carlosgab/PycharmProjects/ProyectoFinal/2023-04-10'
+    pcar = './2023-04-10'
     if not os.path.exists(ruCar):
         os.makedirs(ruCar)
 
@@ -76,7 +76,7 @@ def filtroPol():
 
 def temperatura():
 
-    cap = cv2.VideoCapture('/home/carlosgab/PycharmProjects/ProyectoFinal/Data')
+    cap = cv2.VideoCapture('./Data')
 
     # Limites  y rango del color rojo Prueba 2
     LimiteinferiorRojo1 = np.array([0, 100, 20], np.uint8)
