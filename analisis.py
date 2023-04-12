@@ -6,7 +6,7 @@ import time
 
 def filtroPol():
     ##Aqui se espesifica la ruta del video a nalizar
-    cap = cv2.VideoCapture('./Data/pruebaHongo.mp4')
+    cap = cv2.VideoCapture('proyecto/Data/pruebaHongo.mp4')
 
     ##Simple aqui solo se vefifica que el video es abto para reproduccirse
     if not cap.isOpened():
@@ -22,9 +22,12 @@ def filtroPol():
     fechActual = time.strftime("%Y-%m-%d",estruc)
     ruCar = os.path.join(os.getcwd(), fechActual)
     #En caso de exitir se creara una con la fecha del dia que se ejecute
-    pcar = './2023-04-10'
+    pcar = 'proyecto/AnalizisVideo/2023-04-12'
     if not os.path.exists(ruCar):
         os.makedirs(ruCar)
+    ruta_carpeta_capturas = '/home/manuel/Documentos/AnalizisVideo/2023-04-12/pghongo'
+    if not os.path.exists(ruta_carpeta_capturas):
+        os.makedirs(ruta_carpeta_capturas)
 
     ##Primera mascara de color
     hongoBajo1 = np.array([89, 100, 20], np.uint8)
@@ -54,10 +57,15 @@ def filtroPol():
 
             contPho +=1
             timeReload = 5
+            ret, thresh = cv2.threshold(maskRed, 127, 255, cv2.THRESH_BINARY)
+            num_pixeles_blancos = cv2.countNonZero(thresh)
 
             if contPho %(5 *timeReload) == 0:
-                rutaCap = os.path.join(pcar, "frame{}.jpg".format(contPho))
-                cv2.imwrite(rutaCap, frame)
+                if num_pixeles_blancos > 0:
+                    rutaCap = os.path.join(pcar, "frame{}.jpg".format(contPho))
+                    cv2.imwrite(rutaCap, frame)
+                    ruta_captura = os.path.join(ruta_carpeta_capturas, "captura{}.jpg".format(contPho))
+                    cv2.imwrite(ruta_captura, maskRed)
 
 
             ##En caso de querer de salir de ver los videos debe de precionar "S" para deter el proceso
@@ -66,17 +74,17 @@ def filtroPol():
     cap.release()
     cv2.destroyAllWindows()
 
-    listElemt = os.listdir(ruCar)
+    listElemt = os.listdir(ruta_carpeta_capturas)
     camtElemt = len(listElemt)
     #print(camtElemt)
     if  camtElemt >= 30:
-        return "huitla"
+        print(camtElemt)
     else:
         print("que brr")
 
 def temperatura():
 
-    cap = cv2.VideoCapture('./Data')
+    cap = cv2.VideoCapture('/home/manuel/Documentos/Data/')
 
     # Limites  y rango del color rojo Prueba 2
     LimiteinferiorRojo1 = np.array([0, 100, 20], np.uint8)
@@ -139,6 +147,6 @@ def temperatura():
     cv2.destroyAllWindows()
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     filtroPol()
     #temperatura()
