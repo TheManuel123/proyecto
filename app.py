@@ -6,7 +6,7 @@ import sys
 import dbiot as con
 import monitoreo
 import os
-#import analisis as a
+import analisis as a
 #import consultarclima
 
 
@@ -19,9 +19,9 @@ db = dbase.dbConexion()
 app = Flask(__name__)
 port = int(os.environ.get('PORT', 5000))
 monitoreo.create_dash(app)
-a=("n")
+#a=("n")
 nombreUser = ()
-#a = (a.filtroPol())
+a = (a.filtroPol())
 error = ("")
 
 # Creamos nuestro primer route. '/login'
