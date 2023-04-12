@@ -5,6 +5,7 @@ import conexion_mongo as dbase
 import sys
 import dbiot as con
 import monitoreo
+import os
 #import analisis as a
 #import consultarclima
 
