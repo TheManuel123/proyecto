@@ -16,6 +16,7 @@ db1 = con.dbConexion()
 db = dbase.dbConexion()
 
 app = Flask(__name__)
+port = int(os.environ.get('PORT', 5000))
 monitoreo.create_dash(app)
 a=("n")
 nombreUser = ()
@@ -223,4 +224,4 @@ def dash_temp():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=80)
+    app.run(host='0.0.0.0', debug=True, port=port)
